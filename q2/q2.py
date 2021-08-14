@@ -4,5 +4,9 @@ def exists(x):
 	else:
 		return False
 
-print(exists(None))
-print(exists(1))
+x = None
+print("Checking existance of Undefined Variable")
+print(exists(x))
+x = 1
+print("Checking existance of Defined Variable")
+print(exists(x))

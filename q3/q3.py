@@ -12,4 +12,6 @@ def pascal_triangle(n):
         result.append(cols)
     return result
 
-print(pascal_triangle(4))
+res = pascal_triangle(4)
+for line in res:
+    print(line)
