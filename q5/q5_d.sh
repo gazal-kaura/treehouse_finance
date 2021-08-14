@@ -1,1 +1,1 @@
-git diff --stat HEAD..HEAD~3
+git diff --stat HEAD~3..HEAD
