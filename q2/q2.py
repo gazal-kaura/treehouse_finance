@@ -1,4 +1,8 @@
 def exists(x):
+	"""
+	:param x: Variable to check
+	:return: True if x exists otherwise False
+	"""
 	if x:
 		return True
 	else:

@@ -4,6 +4,13 @@ from scipy.stats import norm
 
 
 def getParametricVaRAndCVaR(df, weights, confidence_level):
+    """
+    This method uses parametric method to compute VaR and CVaR.
+    :param df: Stocks Dataframe.
+    :param weights: Weight allocation of each stock in the portfolio.
+    :param confidence_level: Confidence level (0-1)
+    :return:
+    """
     daily_returns = df['Close'].pct_change()
     daily_returns = daily_returns.dropna()
     portfolio_ret = daily_returns.mean().dot(weights)

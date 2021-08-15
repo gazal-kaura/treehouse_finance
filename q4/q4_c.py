@@ -5,6 +5,16 @@ import pandas as pd
 from pandas_datareader import data
 
 def getOptimizedPortfolio(end, stocks, num_simulations):
+    """
+    This method takes a year worth's (252 trading days) of historical data back from the end date to
+    compute different portfolios and their sharpe ratios and then select the one with the highest Sharpe Ratio.
+    This method also allows short-selling of stocks but under the assumption that all the money is invested in stocks
+    and none in Cash.
+    :param end: End Date for which the portfolio is rebalanced.
+    :param stocks: The stock tickers.
+    :param num_simulations: No. of Simulations to compute the rebalanced portfolio.
+    :return: The rebalanced portfolio
+    """
     start = datetime.strftime(datetime.strptime(end, "%Y/%m/%d") - timedelta(days=252), "%Y/%m/%d")
     df = data.DataReader(stocks, 'yahoo', start=start, end=end)
     daily_returns = df['Close'].pct_change()

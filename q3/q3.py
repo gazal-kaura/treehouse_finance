@@ -1,4 +1,8 @@
 def pascal_triangle(n):
+    """
+    :param n: Levels of Pascal Triangle
+    :return: List of List containing elements at each level.
+    """
     result = []
     for row in range(n):
         col = 0

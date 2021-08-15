@@ -3,6 +3,13 @@ from pandas_datareader import data
 
 
 def getHistoricalVaRAndCVaR(df, weights, confidence_level):
+    """
+    This method computes VaR and CVaR using historical prices.
+    :param df: Stocks Dataframe.
+    :param weights: Weight allocation of each stock in the portfolio.
+    :param confidence_level: Confidence level (1-100)
+    :return: A Tuple (VaR, CVaR)
+    """
     daily_returns = df['Close'].pct_change()
     daily_returns = daily_returns.dropna()
     daily_returns['portfolio'] = daily_returns.dot(weights)
