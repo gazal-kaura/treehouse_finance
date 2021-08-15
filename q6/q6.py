@@ -17,12 +17,11 @@ def getDates(text):
         for m in match:
             for format in v:
                 try:
-                    dt = datetime.strptime(m, format).date()
+                    datetime.strptime(m, format).date()
                     count += 1
                     break
                 except:
                     pass
-
     return count
 
 text = open("sample.txt","r").read()
